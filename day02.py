@@ -26,6 +26,7 @@ def get_dividers(row: List[int]) -> int:
         for val in sorted_row:
             if num % val == 0:
                 return num // val
+    return 0
 
 
 assert row_checksum("""5 1 9 5
