@@ -54,12 +54,16 @@ def parse_inputs(input: List[str]) -> Dict[int, List[int]]:
             for pid, val in new_list}
 
 
-def connected_programs(record: Dict[int, int], prog_id: int) -> Set[int]:
-    programs = set([prog_id])
-    for _ in range(len(record)):
-        for pos in range(len(record)):
-            if pos in programs:
-                programs.update(record[pos])
+def connected_programs(record: Dict[int, List[int]], prog_id: int) -> Set[int]:
+    ids = [prog_id]
+    programs = set()
+
+    while ids:
+        current_id = ids.pop()
+        programs.add(current_id)
+        for next_id in record[current_id]:
+            if next_id not in programs and next_id not in ids:
+                ids.append(next_id)
 
     return programs
 
@@ -85,27 +89,26 @@ assert how_many_programs(TEST.split('\n'), prog_id=0) == 6
 
 def how_many_groups(input: List[str]) -> int:
     record = parse_inputs(input)
-    seen = set()
-    groups = []
+    seen: Set[int] = set()
+    groups = 0
 
     for i in range(len(record)):
         if i in seen:
             continue
+        groups += 1
         seen.add(i)
-        groups.append(i)
         seen.update(connected_programs(record, i))
 
-    return len(groups)
+    return groups
 
 
 assert how_many_groups(TEST.split('\n')) == 2
 
 
-
 if __name__ == '__main__':
     with open('day12_input.txt', 'r') as f:
         lines = f.read().strip().split('\n')
-    print("There are {} programs in prog id 0:".format(
+    print("There are {} programs in prog id 0.".format(
           how_many_programs(lines, prog_id=0)))
-    print("There are {} groups:".format(
+    print("There are {} groups.".format(
           how_many_groups(lines)))
