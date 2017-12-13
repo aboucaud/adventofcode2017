@@ -108,8 +108,8 @@ def first_value_larger_than(num: int) -> int:
     return -1
 
 
-NUMBER = 289326
-
 if __name__ == '__main__':
+    with open('day03_input.txt', 'r') as f:
+        NUMBER = int(f.read().strip())
     print("Distance:", find_distance(NUMBER))
     print("Larget val:", first_value_larger_than(NUMBER))
