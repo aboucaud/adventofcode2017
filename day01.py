@@ -2,6 +2,7 @@
 http://adventofcode.com/2017/day/1
 """
 
+
 def sum_captcha(s: str, halfway: bool = False) -> int:
     if not halfway:
         second_list = s[1:] + s[0]

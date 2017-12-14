@@ -1,7 +1,6 @@
 """
 http://adventofcode.com/2017/day/9
 """
-from typing import List, Dict, Tuple
 
 
 def parse_stream(stream: str) -> int:
@@ -78,7 +77,7 @@ assert parse_stream_with_garbage("<{o'i!a,<{i<a>") == 10
 
 if __name__ == '__main__':
     with open('day09_input.txt', 'r') as f:
-        groups = [line.strip() for line in f]
+        groups = f.read().splitlines()
     total_score = sum(parse_stream(line) for line in groups)
     total_garbage = sum(parse_stream_with_garbage(line) for line in groups)
     print("Total score:", total_score)

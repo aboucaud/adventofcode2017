@@ -1,7 +1,7 @@
 """
 http://adventofcode.com/2017/day/12
 """
-from typing import List, Tuple, Dict, Set
+from typing import List, Dict, Set
 
 
 def parse_inputs(input: List[str]) -> Dict[int, List[int]]:
@@ -33,6 +33,7 @@ def how_many_programs(input: List[str], prog_id: int = 0) -> int:
 # Part2
 # -----
 
+
 def how_many_groups(input: List[str]) -> int:
     record = parse_inputs(input)
     seen: Set[int] = set()
@@ -62,7 +63,7 @@ assert how_many_groups(TEST) == 2
 
 if __name__ == '__main__':
     with open('day12_input.txt', 'r') as f:
-        lines = f.read().strip().split('\n')
+        lines = f.read().splitlines()
     print("There are {} programs in prog id 0.".format(
           how_many_programs(lines, prog_id=0)))
     print("There are {} groups.".format(

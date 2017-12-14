@@ -3,9 +3,11 @@ http://adventofcode.com/2017/day/2
 """
 from typing import List
 
+
 def parse_table(table: List[str]) -> List[List[int]]:
     return [[int(val) for val in row.split()]
             for row in table]
+
 
 def row_checksum(table: List[str]) -> int:
     rows = parse_table(table)
@@ -14,9 +16,11 @@ def row_checksum(table: List[str]) -> int:
 # Part2
 # -----
 
+
 def even_row_checksum(table: List[str]) -> int:
     rows = parse_table(table)
     return sum(get_dividers(row) for row in rows)
+
 
 def get_dividers(row: List[int]) -> int:
     sorted_row = sorted(row)
@@ -34,6 +38,6 @@ assert even_row_checksum(["5 9 2 8", "9 4 7 3", "3 8 6 5"]) == 9
 
 if __name__ == "__main__":
     with open('day02_input.txt', 'r') as f:
-        TABLE = f.read().strip().split('\n')
+        TABLE = f.read().splitlines()
     print("Checksum:", row_checksum(TABLE))
     print("Even checksum:", even_row_checksum(TABLE))

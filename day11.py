@@ -1,7 +1,7 @@
 """
 http://adventofcode.com/2017/day/11
 """
-from typing import NamedTuple, List
+from typing import List
 
 
 def number_of_steps_away(paths: List[str]) -> int:

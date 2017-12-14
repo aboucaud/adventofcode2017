@@ -7,7 +7,8 @@ import itertools
 
 
 def parse_input(text: str) -> List[int]:
-    return [int(number) for number in text.split('\n')]
+    return [int(number) for number in text.splitlines()]
+
 
 def number_of_steps(jump_list: List[int]) -> int:
     idx = 0
@@ -19,6 +20,7 @@ def number_of_steps(jump_list: List[int]) -> int:
             return i
 
     return 0
+
 
 def number_of_steps_v2(jump_list: List[int]) -> int:
     idx = 0

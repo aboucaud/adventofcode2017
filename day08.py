@@ -1,7 +1,7 @@
 """
 http://adventofcode.com/2017/day/8
 """
-from typing import Tuple, List, Dict
+from typing import List, Dict
 
 
 def parse_line(line: str, registry: Dict[str, int]) -> None:
@@ -36,6 +36,7 @@ def largest_value(lines: List[str]) -> int:
 # Part2
 # -----
 
+
 def largest_value_ever(lines: List[str]) -> int:
     registry = initialize_variables(lines)
     max_val = -999
@@ -57,7 +58,7 @@ assert largest_value_ever(TEST) == 10
 
 if __name__ == '__main__':
     with open('day08_input.txt', 'r') as f:
-        lines = [line.strip() for line in f.readlines()]
+        lines = f.read().splitlines()
 
     print('Largest value in registry:', largest_value(lines))
     print('Largest value ever in registry:', largest_value_ever(lines))

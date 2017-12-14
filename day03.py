@@ -72,6 +72,7 @@ def find_distance(num: int) -> int:
     dx, dy = grid_position(num)
     return abs(dx) + abs(dy)
 
+
 assert find_distance(1) == 0
 assert find_distance(12) == 3
 assert find_distance(23) == 2

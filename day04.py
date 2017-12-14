@@ -26,6 +26,7 @@ def count_valid(passphrases: List[str]) -> int:
 # Part 2
 # ------
 
+
 def valid_passphrase_anagram(phrase: str) -> bool:
     """
     Trick for anagrams : sorted words are the same
@@ -49,6 +50,6 @@ def count_valid_stronger(passphrases: List[str]) -> int:
 
 if __name__ == '__main__':
     with open('day04_input.txt', 'r') as f:
-        PASSPHRASES = f.read().strip().split("\n")
+        PASSPHRASES = f.read().splitlines()
     print("Count:", count_valid(PASSPHRASES))
     print("Count 2:", count_valid_stronger(PASSPHRASES))

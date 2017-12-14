@@ -5,6 +5,7 @@ from typing import List
 
 import itertools
 
+
 def count_redistribution_cycles(bank: List[int]) -> int:
     bank_memory = []
     bank_memory.append(tuple(bank))
@@ -16,6 +17,7 @@ def count_redistribution_cycles(bank: List[int]) -> int:
         bank_memory.append(tuple(bank))
 
     return 0
+
 
 def redistribute_blocks(bank: List[int]) -> List[int]:
     bank_size = len(bank)
@@ -29,6 +31,7 @@ def redistribute_blocks(bank: List[int]) -> List[int]:
         blocks -= 1
 
     return bank
+
 
 def count_redistribution_cycles_since_last(bank: List[int]) -> int:
     bank_memory = []

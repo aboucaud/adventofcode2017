@@ -26,6 +26,7 @@ def severity_of(input: List[str]) -> int:
 # Part 2
 # ------
 
+
 def was_caught(layers: Dict[int, int], wait: int) -> bool:
     for depth, range_ in layers.items():
         if scanner_at_zero(depth + wait, range_):
@@ -55,6 +56,6 @@ assert min_delay(TEST) == 10
 
 if __name__ == '__main__':
     with open('day13_input.txt', 'r') as f:
-        lines = f.read().strip().split('\n')
+        lines = f.read().splitlines()
     print("Severity:", severity_of(lines))
     print("Min delay:", min_delay(lines))

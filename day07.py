@@ -31,6 +31,7 @@ def find_bottom_program(programs: List[str]) -> str:
 # Part2
 # -----
 
+
 def parse_line(line: str) -> Tuple[str, int, List[str]]:
     res = line.split(' -> ')
     name, weight = res[0].split()
@@ -40,7 +41,8 @@ def parse_line(line: str) -> Tuple[str, int, List[str]]:
     return (name, int(weight), aboves)
 
 
-def parse_programs(programs: List[str]) -> Tuple[Dict[str, int], Dict[str, List[str]]]:
+def parse_programs(programs: List[str]) -> Tuple[Dict[str, int],
+                                                 Dict[str, List[str]]]:
     weights_dict = {}
     aboves_dict = {}
     for line in programs:
@@ -92,6 +94,6 @@ assert find_bottom_program(TEST) == 'tknk'
 
 if __name__ == '__main__':
     with open('day07_input.txt', 'r') as f:
-        programs = [line.strip() for line in f]
+        programs = f.read().splitlines()
     print("Name of bottom program:", find_bottom_program(programs))
     print("Weight of child programs:", find_unbalanced_weight(programs))
