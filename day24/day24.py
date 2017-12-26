@@ -23,7 +23,7 @@ def build_bridges(parts, pin, bridge):
         pins = part[:]
         pins.remove(pin)
         # print(f'output = {output}')
-        output += build_bridges( parts_left, pins[0], bridge + [part])
+        output += build_bridges(parts_left, pins[0], bridge + [part])
 
     return output
 
